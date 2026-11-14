@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oxen Lawn & Landscape | Park City, UT</title>
+<meta name="description" content="Landscaping, lawn mowing, property maintenance and snow removal in Park City and the Wasatch Back. Call (435) 775-0100 for a free estimate.">
+<link rel="icon" href="images/logo-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2fa01f;
+  --green-hover:#38b526;
+  --bg:#0f110f;
+  --bg-alt:#161916;
+  --line:#2a2e2a;
+  --text:#f1f2ef;
+  --muted:#a3a9a1;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.15;font-weight:600}
+h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:16px}
+h3{font-size:1.2rem;margin-bottom:8px}
+p{color:var(--muted)}
+section{padding:96px 0}
+.alt{background:var(--bg-alt)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;font-family:'Poppins',sans-serif;font-weight:500;font-size:.95rem;border:0;cursor:pointer;transition:background .2s,color .2s}
+.btn svg{width:16px;height:16px}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-hover)}
+.btn-text{color:#fff;padding-inline:6px}
+.btn-text:hover{color:var(--green-hover)}
+
+/* Nav */
+.nav{position:absolute;top:20px;left:0;right:0;z-index:20}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 12px 10px 22px;border-radius:16px;background:rgba(20,22,20,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.logo img{height:42px;width:auto}
+.nav-links{display:flex;gap:32px;list-style:none;font-family:'Poppins',sans-serif;font-size:.9rem}
+.nav-links a{color:rgba(255,255,255,.85)}
+.nav-links a:hover{color:#fff}
+.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:10px;padding:8px 12px;font:inherit;font-size:.9rem;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:150px 0 80px;background:url('images/hero.jpg') center 60%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.5) 50%,rgba(0,0,0,.2) 100%)}
+.hero .wrap{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.hero-text{max-width:720px}
+.hero-loc{font-size:.95rem;color:rgba(255,255,255,.85);margin-bottom:20px}
+.hero h1{font-size:clamp(2.5rem,5.8vw,4.6rem);font-weight:600;margin-bottom:22px}
+.hero h1 em{display:block;font-weight:600}
+.hero p{color:rgba(255,255,255,.85);max-width:500px;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero-card{flex:none;width:210px;padding:20px 22px;border-radius:16px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18)}
+.hero-card b{font-family:'Poppins',sans-serif;font-size:2.2rem;font-weight:600;line-height:1;display:block}
+.hero-card span{font-size:.88rem;color:rgba(255,255,255,.85)}
+.hero-card hr{border:0;border-top:1px solid rgba(255,255,255,.2);margin:14px 0}
+.stars{color:#f5c13d;letter-spacing:1px}
+
+/* Facts */
+.facts{padding:0;border-bottom:1px solid var(--line)}
+.facts-row{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:30px 0;text-align:center;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact b{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:600;display:block}
+.fact span{font-size:.88rem;color:var(--muted)}
+
+/* Services */
+.section-head{max-width:640px;margin-bottom:48px}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px 40px}
+.svc img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;margin-bottom:22px}
+.svc p{margin-bottom:12px}
+.svc .includes{font-size:.9rem;color:var(--text)}
+.svc .includes span{color:var(--muted)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img img{width:100%;border-radius:12px;aspect-ratio:4/3;object-fit:cover}
+.about p+p{margin-top:14px}
+.reasons{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin:28px 0 32px}
+.reasons li{padding-left:18px;position:relative;font-size:.95rem}
+.reasons li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:2px;background:var(--green)}
+
+/* Gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+
+/* Reviews */
+.rev-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.rev-head p{margin:0}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.rev blockquote{font-size:1.02rem;color:var(--text);margin:12px 0 16px}
+.rev cite{font-style:normal;font-size:.9rem;color:var(--muted)}
+.rev cite b{color:var(--text);font-weight:600}
+
+/* Areas */
+.areas-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:64px}
+.area-list{list-style:none;columns:3;column-gap:24px}
+.area-list li{padding:8px 0;border-bottom:1px solid var(--line);break-inside:avoid;font-size:.95rem}
+
+/* FAQ */
+.faq-wrap{max-width:820px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-family:'Poppins',sans-serif;font-weight:500;font-size:1.05rem;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--green-hover);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{padding:0 40px 22px 0}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px}
+.contact-lines{margin-top:32px;display:grid;gap:22px}
+.contact-lines small{display:block;font-size:.8rem;color:var(--muted)}
+.contact-lines a,.contact-lines div>span{font-size:1.05rem;font-weight:500}
+.contact-lines .phone{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:600}
+.contact-lines a:hover{color:var(--green-hover)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+label{font-size:.85rem;font-weight:500}
+input,select,textarea{width:100%;min-width:0;font:inherit;font-size:.95rem;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--green);outline-offset:-1px;border-color:transparent}
+textarea{min-height:110px;resize:vertical}
+form .btn{justify-self:start;margin-top:6px}
+.form-note{grid-column:1/-1;font-size:.82rem}
+.form-done{display:none}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:56px 0 28px;font-size:.92rem}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.foot-grid img{height:50px;width:auto;margin-bottom:14px}
+.foot-grid h4{font-family:'Poppins',sans-serif;font-weight:500;font-size:.95rem;margin-bottom:12px}
+.foot-grid ul{list-style:none;display:grid;gap:6px;color:var(--muted)}
+.foot-grid a:hover{color:var(--text)}
+.copy{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+
+@media (max-width:900px){
+  section{padding:72px 0}
+  .nav-links,.nav .btn{display:none}
+  .menu-btn{display:block}
+  .nav.open .nav-inner{flex-wrap:wrap;background:rgba(15,17,15,.97)}
+  .nav.open .nav-links{display:flex;flex-direction:column;gap:0;width:100%;padding:10px 0}
+  .nav.open .nav-links a{display:block;padding:12px 0;border-top:1px solid var(--line);font-size:1rem}
+  .hero .wrap{flex-direction:column;align-items:flex-start}
+  .facts-row{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2){border-right:0}
+  .fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .svc-grid,.about-grid,.areas-grid,.contact-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+  .rev-grid{grid-template-columns:1fr;gap:32px}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .area-list{columns:2}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .logo img{height:34px}
+  .hero{padding-top:120px}
+  .hero::before{background:rgba(0,0,0,.6)}
+  .reasons{grid-template-columns:1fr}
+  form{grid-template-columns:minmax(0,1fr)}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo"><img src="images/logo-transparent.png" alt="Oxen Lawn & Landscape"></a>
+    <ul class="nav-links">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-green" href="#contact">Contact Us</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="hero-loc">[Park City, UT]</div>
+      <h1>Premier Park City <em>Landscaper</em></h1>
+      <p>Landscaping, lawn mowing, year-round property maintenance and snow removal for homes and businesses in Park City and the Wasatch Back.</p>
+      <div class="hero-actions">
+        <a class="btn btn-green" href="#contact">Get A Quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-text" href="#services">Our Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <b>15+</b>
+      <span>Years Experience</span>
+      <hr>
+      <div><span class="stars">★★★★★</span></div>
+      <span>4.9 from 62+ Google reviews</span>
+    </div>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="wrap facts-row">
+    <div class="fact"><b>4.9</b><span>Google rating</span></div>
+    <div class="fact"><b>62+</b><span>Google reviews</span></div>
+    <div class="fact"><b>200+</b><span>Properties maintained</span></div>
+    <div class="fact"><b>15+</b><span>Years experience</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Our Services</h2>
+      <p>Outdoor services for homes, second homes and commercial properties throughout Park City, Heber Valley and the Wasatch Back.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc">
+        <img src="images/planting.jpg" alt="Landscaper planting a tree with mulch" loading="lazy">
+        <h3>Landscaping</h3>
+        <p>We design, improve and maintain landscapes that hold up in Park City's mountain climate and suit the property they belong to.</p>
+        <div class="includes">Includes: <span>landscape installation, renovations, decorative rock and mulch, seasonal plantings.</span></div>
+      </article>
+      <article class="svc">
+        <img src="images/px-mowing.jpg" alt="Lawn being mowed" loading="lazy">
+        <h3>Lawn Mowing</h3>
+        <p>Recurring mowing, trimming, edging and cleanup through the growing season, on a reliable schedule.</p>
+        <div class="includes">Includes: <span>weekly mowing, edging, detail trimming, blowing and cleanup.</span></div>
+      </article>
+      <article class="svc">
+        <img src="images/px-hedge.jpg" alt="Hedge being trimmed with shears" loading="lazy">
+        <h3>Property Maintenance</h3>
+        <p>Maintenance plans for primary residences, vacation homes and commercial properties, built around what each property needs.</p>
+        <div class="includes">Includes: <span>landscape maintenance, lawn care, spring and fall cleanup, vacation home care.</span></div>
+      </article>
+      <article class="svc">
+        <img src="images/snow-plow.jpg" alt="Pickup truck with snow plow on a residential street" loading="lazy" style="object-position:center 70%">
+        <h3>Snow Removal</h3>
+        <p>Driveways, walkways and entrances kept clear through the winter. Best arranged before the first big storm.</p>
+        <div class="includes">Includes: <span>residential and commercial snow removal, vacation home service, ice management.</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="about">
+  <div class="wrap about-grid">
+    <div class="about">
+      <h2>Dependable Strength. Trustworthy Results.</h2>
+      <p>Owning property in Park City means a short growing season, high elevation, irrigation demands and long winters. Oxen brings local experience to those conditions instead of treating every property the same.</p>
+      <p>We handle lawn care and landscaping in summer and snow removal in winter, so you work with one local company all year. That matters most for second homes, where the owner isn't always there to keep an eye on things.</p>
+      <ul class="reasons">
+        <li>Professional workmanship</li>
+        <li>Reliable scheduling</li>
+        <li>Clear communication</li>
+        <li>Attention to detail</li>
+        <li>Respect for your property</li>
+        <li>Long-term relationships</li>
+      </ul>
+      <a class="btn btn-green" href="#contact">Get a Free Estimate</a>
+    </div>
+    <div class="about-img"><img src="images/drone.jpg" alt="Aerial view of a lawn maintained by Oxen Lawn & Landscape" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head"><h2>Gallery</h2></div>
+    <div class="gal-grid">
+      <img src="images/front-path.jpg" alt="Front lawn with brick path" loading="lazy">
+      <img src="images/backyard.jpg" alt="Backyard lawn and covered patio" loading="lazy">
+      <img src="images/patio.jpg" alt="Backyard patio with lawn" loading="lazy">
+      <img src="images/px-stone-path.jpg" alt="Stone steps through a planted garden" loading="lazy">
+      <img src="images/sod.jpg" alt="New sod being laid" loading="lazy">
+      <img src="images/px-formal-garden.jpg" alt="Formal garden with trimmed hedges" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="reviews">
+  <div class="wrap">
+    <div class="rev-head">
+      <h2>Reviews</h2>
+      <p><span class="stars">★★★★★</span> 4.9 on Google, 62+ reviews</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev">
+        <span class="stars">★★★★★</span>
+        <blockquote>“The team was professional, punctual, and incredibly knowledgeable… Their attention to detail was impressive… My only regret is not hiring them sooner.”</blockquote>
+        <cite><b>Jessica Y.</b>, Park City</cite>
+      </div>
+      <div class="rev">
+        <span class="stars">★★★★★</span>
+        <blockquote>“Oxen Lawn &amp; Landscape has my yard looking better than it ever has… Randy is responsive and his crew goes above and beyond.”</blockquote>
+        <cite><b>Holly T.</b></cite>
+      </div>
+      <div class="rev">
+        <span class="stars">★★★★★</span>
+        <blockquote>“Reliable, professional, and great quality work… they created and maintain our landscape beautifully.”</blockquote>
+        <cite><b>Mick H.</b></cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="wrap areas-grid">
+    <div>
+      <h2>Service Area</h2>
+      <p>Park City and the surrounding Wasatch Back. Availability depends on the property and the service, so call us to check yours.</p>
+    </div>
+    <ul class="area-list">
+      <li>Park City</li><li>Deer Valley</li><li>Old Town</li><li>The Canyons</li><li>Kimball Junction</li>
+      <li>Jeremy Ranch</li><li>Pinebrook</li><li>Silver Creek</li><li>Snyderville Basin</li><li>Promontory</li>
+      <li>Heber City</li><li>Midway</li><li>Hideout</li><li>Tuhaye</li><li>Deer Mountain</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="faq">
+  <div class="wrap faq-wrap">
+    <h2>Questions</h2>
+    <details open>
+      <summary>What services does Oxen provide?</summary>
+      <p>Landscaping, lawn mowing, property maintenance and snow removal for residential and commercial properties in the Park City area.</p>
+    </details>
+    <details>
+      <summary>Do you offer recurring lawn mowing?</summary>
+      <p>Yes. Recurring lawn mowing and lawn maintenance are available for properties within our lawn care service area.</p>
+    </details>
+    <details>
+      <summary>Can you look after a second home or vacation property?</summary>
+      <p>Yes. Recurring property care is especially useful for owners who need dependable local maintenance while they're away.</p>
+    </details>
+    <details>
+      <summary>Do you work in both summer and winter?</summary>
+      <p>Yes. We do lawn and landscape work in the warm season and snow removal in winter, so you can stay with one company year-round.</p>
+    </details>
+    <details>
+      <summary>Do you serve areas outside Park City?</summary>
+      <p>Yes, depending on the service. That includes Heber City, Midway, Hideout and other Wasatch Back communities.</p>
+    </details>
+    <details>
+      <summary>How do I get an estimate?</summary>
+      <p>Call us or fill in the form below with your address and the services you need. Estimates are free.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Request a Free Estimate</h2>
+      <p>Tell us what your property needs and we'll get back to you. No obligation.</p>
+      <div class="contact-lines">
+        <div><small>Phone</small><a class="phone" href="tel:+14357750100">(435) 775-0100</a></div>
+        <div><small>Email</small><a href="mailto:Oxen@myyahoo.com">Oxen@myyahoo.com</a></div>
+        <div><small>Address</small><span>6300 Sagewood Dr, Park City, UT 84098</span></div>
+      </div>
+    </div>
+    <div>
+      <form id="quoteForm">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+        <div class="field"><label for="f-service">Service</label>
+          <select id="f-service" name="service">
+            <option>Landscaping</option><option>Lawn Mowing</option><option>Property Maintenance</option><option>Snow Removal</option><option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-addr">Property address</label><input id="f-addr" name="address" autocomplete="street-address"></div>
+        <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
+        <button class="btn btn-green" type="submit">Send Request</button>
+        <p class="form-note">We only use your information to respond to your request.</p>
+      </form>
+      <div class="form-done" id="formDone">
+        <h3>Thanks, we got it.</h3>
+        <p>We'll be in touch shortly. For anything urgent, call (435) 775-0100.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="images/logo-transparent.png" alt="Oxen Lawn & Landscape">
+        <p>Lawn care, landscaping and snow removal in Park City, Utah.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#services">Landscaping</a></li><li><a href="#services">Lawn Mowing</a></li><li><a href="#services">Property Maintenance</a></li><li><a href="#services">Snow Removal</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#about">About</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+14357750100">(435) 775-0100</a></li><li><a href="mailto:Oxen@myyahoo.com">Oxen@myyahoo.com</a></li><li>6300 Sagewood Dr<br>Park City, UT 84098</li></ul>
+      </div>
+    </div>
+    <div class="copy">© <span id="yr">2026</span> Oxen Lawn &amp; Landscape</div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav'),btn=document.getElementById('menuBtn');
+btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu'});
+nav.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.textContent='Menu'}));
+
+// Front-end only: connect to Formspree, Netlify Forms or similar to receive submissions
+document.getElementById('quoteForm').addEventListener('submit',e=>{
+  e.preventDefault();e.target.style.display='none';document.getElementById('formDone').style.display='block';
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
